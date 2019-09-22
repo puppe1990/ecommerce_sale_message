@@ -6,10 +6,17 @@
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.7",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "select2": "^4.0.10",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.8.1"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/puppe1990/sale_message.git",
+  "author": "puppe1990 <matheus.puppe90@hotmail.com>",
+  "license": "MIT"
 }
