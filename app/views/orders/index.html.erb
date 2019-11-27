@@ -19,7 +19,7 @@
         <td><%= order["Wspedido"]["numero"] %></td>
         <td><%= order["Wspedido"]["cliente_razaosocial"] %></td>
         <td><%= order["Wspedido"]["data_pedido"] %></td>
-        <td><%= order["Wspedido"]["pedidostatus_id"] %></td>
+        <td><%= order["Wspedido"]["pedidostatus_id"] == '2' ? "#{order["Wspedido"]["pedidostatus_id"]}-Não Pago" : "#{order["Wspedido"]["pedidostatus_id"]}-Pago" %></td>
         <td><%= order["Wspedido"]["total_pedido"] %></td>
         <td><%= order["Wspedido"]["pagamento_forma"] %></td>
         <td><%= order["Wspedido"]["pagamento_integrador_id"] %></td>
