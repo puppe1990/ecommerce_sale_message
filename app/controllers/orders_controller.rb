@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
   private
 
   def list_orders
-    HTTParty.get('https://purchasestore.com.br/ws/wspedidos.json',
+    HTTParty.get('https://purchasestore.com.br/ws/wspedidos.json?page=1',
                  headers: { content: 'application/json',
                             Appkey: 'ZTgyYjMzZDJhMDVjMTVjZWM4OWNiMGU5NjI1NTNkYmU' })
   end  
