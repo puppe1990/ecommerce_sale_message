@@ -10,7 +10,8 @@
       <th>Pagamento Integrador</th>
       <th>Telefone</th>
       <th>Email</th>
-      <th>Mensagem WhatsApp</th>
+      <th>Mensagem WhatsApp PC</th>
+      <th>Mensagem WhatsApp Celular</th>
     </tr>
   </thead>
   <tbody>
@@ -25,7 +26,8 @@
         <td><%= order["Wspedido"]["pagamento_integrador_id"] %></td>
         <td><%= order["Wspedido"]["cliente_telefone"] %></td>
         <td><%= order["Wspedido"]["cliente_email"] %></td>
-        <td><a href="https://web.whatsapp.com/send?phone=55<%= order["Wspedido"]["cliente_telefone"].delete'() ' %>&amp;text=Oi <%= order["Wspedido"]["cliente_razaosocial"].split(" ").first %>, sou a Lari da Purchase e recebemos o teu pedido <%= order["Wspedido"]["numero"] %> no site. Vi que seu pagamento é em depósito ou cartão, assim que efetuar pode mandar o comprovante pra mim! Em 3 dias após criado o pedido é cancelado automaticamente. Estou a disposição para tirar suas dúvidas ou informações! ❤" target="_blank">Clique Aqui para mandar uma mensagem pelo WhatsApp</a></td>
+        <td><a href="https://web.whatsapp.com/send?phone=55<%= order["Wspedido"]["cliente_telefone"].delete'() ' %>&amp;text=Oi <%= order["Wspedido"]["cliente_razaosocial"].split(" ").first %>, sou a Lari da Purchase e recebemos o teu pedido <%= order["Wspedido"]["numero"] %> no site. Vi que seu pagamento é em depósito ou cartão, assim que efetuar pode mandar o comprovante pra mim! Em 3 dias após criado o pedido é cancelado automaticamente. Estou a disposição para tirar suas dúvidas ou informações! ❤" target="_blank">Clique Aqui para mandar uma mensagem pelo WhatsApp</a></td>        
+        <td><a href="https://api.whatsapp.com/send?phone=55<%= order["Wspedido"]["cliente_telefone"].delete'() ' %>&amp;text=Oi <%= order["Wspedido"]["cliente_razaosocial"].split(" ").first %>, sou a Lari da Purchase e recebemos o teu pedido <%= order["Wspedido"]["numero"] %> no site. Vi que seu pagamento é em depósito ou cartão, assim que efetuar pode mandar o comprovante pra mim! Em 3 dias após criado o pedido é cancelado automaticamente. Estou a disposição para tirar suas dúvidas ou informações! ❤" target="_blank">Clique Aqui para mandar uma mensagem pelo WhatsApp</a></td>
       </tr>
     <% end %>
   </tbody>
