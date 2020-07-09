@@ -1,7 +1,7 @@
 class OrderStore < ApplicationRecord
 
 	def self.list_orders
-		for i in 1..6
+		for i in 1..12
   			@orders = HTTParty.get("https://purchasestore.com.br/ws/wspedidos.json?page=#{i}",
                headers: { content: 'application/json',
                           Appkey: 'ZTgyYjMzZDJhMDVjMTVjZWM4OWNiMGU5NjI1NTNkYmU' })
@@ -12,14 +12,6 @@ class OrderStore < ApplicationRecord
 			end
 		end
 	end
-
-	def self.remove_all
-		@orders = OrderStore.all
-		@orders.each do |order|
-			order.delete
-		end
-	end
-
 end
 
 
