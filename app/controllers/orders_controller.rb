@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   end
 
   def discount_message
-    @bank_accounts = "Contas bancárias%0a
+    @bank_accounts = "%0aContas bancárias:%0a
                       Itaú %0a
                       Ag: 0187 %0a
                       Conta: 16334-0%0a
@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
                       Ag: 2124 %0a
                       CC: 130013193 %0a
                       Matheus Nunes Puppe %0a
-                      Purchase Store"
+                      Purchase Store%0a"
     @orders = []
     (1..8).each do |i|
       @order_page = HTTParty.get("https://purchasestore.com.br/ws/wspedidos.json?page=#{i}",
