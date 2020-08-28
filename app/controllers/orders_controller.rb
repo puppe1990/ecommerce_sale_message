@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
 
   def exchanges
     @orders = []
-    (1..35).each do |i|
+    (1..30).each do |i|
       @order_page = HTTParty.get("https://purchasestore.com.br/ws/wspedidos.json?page=#{i}",
                                  headers: { content: 'application/json',
                                             Appkey: 'ZTgyYjMzZDJhMDVjMTVjZWM4OWNiMGU5NjI1NTNkYmU' })
