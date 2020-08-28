@@ -14,38 +14,38 @@ class OrdersController < ApplicationController
   end
 
   def discount_message
-    @bank_accounts = "Contas bancárias \n
-                      Itaú \n
-                      Ag 0187 \n
-                      Conta 16334 0\n
-                      Larissa rodrigues \n
-                      Conta corrente \n
-                      Cpf: 86377329091\n
-                      \n
-                      Banco do Brasill\n
-                      Ag:1899-6\n
-                      Conta corrente:49603-0\n
-                      cpf:02399708024\n
-                      Matheus Nunes Puppe\n
-                      \n
-                      Banrisul\n
-                      Agência: 0062 \n
-                      Conta:06.067524.0-2\n
-                      Purchase Store\n
-                      Cnpj: 33629.474/000156\n
-                      Conta Corrente\n
-                      \n
-                      Caixa federal \n
-                      Ag 3775\n
-                      Op 013\n
-                      Conta 6446-1\n
-                      Matheus Nunes Puppe \n
-                      CPF: 02399708024\n
-                      \n
-                      Santander \n
-                      Ag: 2124\n
-                      CC: 130013193\n
-                      Matheus Nunes Puppe\n
+    @bank_accounts = "Contas bancárias 
+                      Itaú 
+                      Ag 0187 
+                      Conta 16334 0
+                      Larissa rodrigues 
+                      Conta corrente 
+                      Cpf: 86377329091
+                      
+                      Banco do Brasill
+                      Ag:1899-6
+                      Conta corrente:49603-0
+                      cpf:02399708024
+                      Matheus Nunes Puppe
+                      
+                      Banrisul
+                      Agência: 0062 
+                      Conta:06.067524.0-2
+                      Purchase Store
+                      Cnpj: 33629.474/000156
+                      Conta Corrente
+                      
+                      Caixa federal 
+                      Ag 3775
+                      Op 013
+                      Conta 6446-1
+                      Matheus Nunes Puppe 
+                      CPF: 02399708024
+                      
+                      Santander 
+                      Ag: 2124
+                      CC: 130013193
+                      Matheus Nunes Puppe
                       Purchase Store"
     @orders = []
     (1..5).each do |i|
