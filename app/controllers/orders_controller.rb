@@ -3,7 +3,7 @@
 class OrdersController < ApplicationController
   def index
     @orders = []
-    (1..5).each do |i|
+    (1..8).each do |i|
       @order_page = HTTParty.get("https://purchasestore.com.br/ws/wspedidos.json?page=#{i}",
                                  headers: { content: 'application/json',
                                             Appkey: 'ZTgyYjMzZDJhMDVjMTVjZWM4OWNiMGU5NjI1NTNkYmU' })
