@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
                       Matheus Nunes Puppe %0a
                       Purchase Store%0a"
     @orders = []
-    (1..8).each do |i|
+    (1..12).each do |i|
       @order_page = HTTParty.get("https://purchasestore.com.br/ws/wspedidos.json?page=#{i}",
                                  headers: { content: 'application/json',
                                             Appkey: 'ZTgyYjMzZDJhMDVjMTVjZWM4OWNiMGU5NjI1NTNkYmU' })
