@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Simplo Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Name</th>
+      <th>Order date</th>
+      <th>Order status</th>
+      <th>Telephone</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @simplo_orders.each do |simplo_order| %>
+      <tr>
+        <td><%= simplo_order.order_id %></td>
+        <td><%= simplo_order.name %></td>
+        <td><%= simplo_order.order_date %></td>
+        <td><%= simplo_order.order_status %></td>
+        <td><%= simplo_order.telephone %></td>
+        <td><%= simplo_order.email %></td>
+        <td><%= link_to 'Show', simplo_order %></td>
+        <td><%= link_to 'Edit', edit_simplo_order_path(simplo_order) %></td>
+        <td><%= link_to 'Destroy', simplo_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Simplo Order', new_simplo_order_path %>

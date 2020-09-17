@@ -1,0 +1,47 @@
+<%= form_with(model: simplo_order, local: true) do |form| %>
+  <% if simplo_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(simplo_order.errors.count, "error") %> prohibited this simplo_order from being saved:</h2>
+
+      <ul>
+        <% simplo_order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :order_id %>
+    <%= form.text_field :order_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_date %>
+    <%= form.datetime_select :order_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_status %>
+    <%= form.text_field :order_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telephone %>
+    <%= form.text_field :telephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
