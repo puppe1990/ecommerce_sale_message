@@ -16,7 +16,8 @@ class SimploOrder < ApplicationRecord
                                order_status: order_page['Wspedido']['pedidostatus_id'],
                                telephone: order_page["Wspedido"]["cliente_telefone"],
                                email: order_page["Wspedido"]["cliente_email"],
-                               order_date: Time.parse(order_page['Wspedido']['data_pedido']))
+                               order_date: Time.parse(order_page['Wspedido']['data_pedido']),
+                               total_value: order_page["Wspedido"]["total_pedido"])
           else
             order.update(order_status: order_page['Wspedido']['pedidostatus_id']) if order.order_status != order_page['Wspedido']['pedidostatus_id']
           end
