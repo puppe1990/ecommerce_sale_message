@@ -7,6 +7,7 @@
       <th>Status pedido</th>
       <th>Telefone</th>
       <th>Email</th>
+      <th>CEP</th>
       <th>Mensagem WhatsApp PC</th>
       <th>Mensagem WhatsApp Celular</th>
     </tr>
@@ -20,6 +21,7 @@
         <td><%= order.order_status == '1' ? "#{order.order_status}-Não Pago" : "#{order.order_status}-Pago" %></td>
         <td><%= order.telephone %></td>
         <td><%= order.email %></td>
+        <td><%= order.cep %></td>
         <td><a href="https://web.whatsapp.com/send?phone=55<%= order.telephone.delete'() ' %>&amp;text=Oi <%= order.name.split(" ").first %>, seu pedido <%= order.order_id %> está para ser cancelado, mas eu consegui um desconto de <%= order.total_value %> para <%= ((order.total_value).to_f * 0.87).round(2) %> se você efetuar o pagamento até as 18h de hoje(<%= Date.today.strftime("%-d/%-m/%Y") %>). Segue as contas para depósito: <%= @bank_accounts %> Qualquer dúvida fico a disposição!" target="_blank">Clique Aqui para mandar uma mensagem pelo WhatsApp</a></td>        
         <td><a href="https://api.whatsapp.com/send?phone=55<%= order.telephone.delete'() ' %>&amp;text=Oi <%= order.name.split(" ").first %>, seu pedido <%= order.order_id %> está para ser cancelado, mas eu consegui um desconto de <%= order.total_value %> para <%= ((order.total_value).to_f * 0.87).round(2) %> se você efetuar o pagamento até as 18h de hoje(<%= Date.today.strftime("%-d/%-m/%Y") %>). Segue as contas para depósito: <%= @bank_accounts %> Qualquer dúvida fico a disposição!" target="_blank">Clique Aqui para mandar uma mensagem pelo WhatsApp</a></td>
       </tr>

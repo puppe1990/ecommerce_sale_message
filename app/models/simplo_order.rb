@@ -15,6 +15,7 @@ class SimploOrder < ApplicationRecord
                                order_id: order_page['Wspedido']['numero'],
                                order_status: order_page['Wspedido']['pedidostatus_id'],
                                telephone: order_page["Wspedido"]["cliente_telefone"],
+                               cep: order_page["Wspedido"]["entrega_cep"],
                                email: order_page["Wspedido"]["cliente_email"],
                                order_date: Time.parse(order_page['Wspedido']['data_pedido']),
                                total_value: order_page["Wspedido"]["total_pedido"])
