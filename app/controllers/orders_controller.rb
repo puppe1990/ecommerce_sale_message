@@ -1,9 +1,34 @@
 # frozen_string_literal: true
 
 class OrdersController < ApplicationController
-  def index; end
+  def index
+    @status_code = {'Seu pedido foi criado com sucesso! Aguardamos o pagamento' => '1', 
+                    'Aguardando Pagamento' => '24',
+                    'Solicitação de troca ou devolução' => '29',
+                    'Pago' => '2',
+                    'Sendo fabricado para ser enviado em Porto Alegre' => '31',
+                    'Sendo fabricado para ser enviado em São Paulo' => '30',
+                    'Agendado para entrega pelo motoboy!' => '33',
+                    'Disponível para ser Retirado em Mãos' => '32',
+                    'Enviado' => '23',
+                    'Entregue' => '3',
+                    'Cancelado' => '4'
+                  }
+  end
 
   def discount_message
+    @status_code = {'Seu pedido foi criado com sucesso! Aguardamos o pagamento' => '1', 
+      'Aguardando Pagamento' => '24',
+      'Solicitação de troca ou devolução' => '29',
+      'Pago' => '2',
+      'Sendo fabricado para ser enviado em Porto Alegre' => '31',
+      'Sendo fabricado para ser enviado em São Paulo' => '30',
+      'Agendado para entrega pelo motoboy!' => '33',
+      'Disponível para ser Retirado em Mãos' => '32',
+      'Enviado' => '23',
+      'Entregue' => '3',
+      'Cancelado' => '4'
+    }
     @bank_accounts = "%0aContas bancárias:%0a
                       Itaú %0a
                       Ag: 0187 %0a
@@ -37,28 +62,5 @@ class OrdersController < ApplicationController
                       CC: 130013193 %0a
                       Matheus Nunes Puppe %0a
                       Purchase Store%0a"
-    @orders = []
-    (1..12).each do |i|
-      @order_page = HTTParty.get("https://purchasestore.com.br/ws/wspedidos.json?page=#{i}",
-                                 headers: { content: 'application/json',
-                                            Appkey: 'ZTgyYjMzZDJhMDVjMTVjZWM4OWNiMGU5NjI1NTNkYmU' })
-      @order_page['result'].each do |order_page|
-        @orders << order_page
-      end
-    end
-  end
-
-  def exchanges
-    @orders = []
-    (1..30).each do |i|
-      @order_page = HTTParty.get("https://purchasestore.com.br/ws/wspedidos.json?page=#{i}",
-                                 headers: { content: 'application/json',
-                                            Appkey: 'ZTgyYjMzZDJhMDVjMTVjZWM4OWNiMGU5NjI1NTNkYmU' })
-      @order_page['result'].each do |order_page|
-        if order["Wspedido"]["pedidostatus_id"] != '24'
-          @orders << order_page
-        end
-      end
-    end
   end
 end
