@@ -18,6 +18,8 @@ class SimploOrder < ApplicationRecord
                                cep: order_page["Wspedido"]["entrega_cep"],
                                email: order_page["Wspedido"]["cliente_email"],
                                order_date: Time.parse(order_page['Wspedido']['data_pedido']),
+                               total_freight: order_page["Wspedido"]["total_frete"],
+                               total_products: order_page["Wspedido"]["total_produtos"],
                                total_value: order_page["Wspedido"]["total_pedido"],
                                tracking_object: order_page["Wspedido"]["envio_codigo_objeto"])
           else
