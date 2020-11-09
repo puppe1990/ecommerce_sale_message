@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_153336) do
+ActiveRecord::Schema.define(version: 2020_11_09_155935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_153336) do
     t.string "tracking_object"
     t.float "total_freight"
     t.float "total_products"
+    t.float "total_discount"
   end
 
 end
