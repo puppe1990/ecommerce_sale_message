@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_155935) do
+ActiveRecord::Schema.define(version: 2021_02_04_185001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2020_11_09_155935) do
     t.float "total_freight"
     t.float "total_products"
     t.float "total_discount"
+    t.string "entrega_logradouro"
+    t.string "cliente_cpfcnpj"
+    t.string "entrega_numero"
+    t.string "entrega_bairro"
+    t.string "entrega_cidade"
+    t.string "entrega_estado"
+    t.string "envio_servico"
+    t.string "nota_fiscal"
+    t.string "cliente_informacoes_adicionais"
   end
 
 end
