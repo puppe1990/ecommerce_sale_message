@@ -2,7 +2,7 @@ class OrderStore < ApplicationRecord
 
 	def self.list_orders
 		for i in 1..20
-  		@orders = HTTParty.get("https://purchasestore.com.br/ws/wspedidos.json?page=#{i}",
+  		@orders = HTTParty.get("https://purchasestore.com.br/ws/wspedidos.json?page=#{i}?data_inicio=2021-04-01",
                headers: { content: 'application/json',
                           Appkey: 'ZTgyYjMzZDJhMDVjMTVjZWM4OWNiMGU5NjI1NTNkYmU' })
 			@orders["result"].each do |order|
