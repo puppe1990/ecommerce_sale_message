@@ -16,6 +16,36 @@ class OrdersController < ApplicationController
                   }
   end
 
+  def immediate_delivery
+    @status_code = {'Seu pedido foi criado com sucesso! Aguardamos o pagamento' => '1', 
+                    'Aguardando Pagamento' => '24',
+                    'Solicitação de troca ou devolução' => '29',
+                    'Pago' => '2',
+                    'Sendo fabricado para ser enviado em Porto Alegre' => '31',
+                    'Sendo fabricado para ser enviado em São Paulo' => '30',
+                    'Agendado para entrega pelo motoboy!' => '33',
+                    'Disponível para ser Retirado em Mãos' => '32',
+                    'Enviado' => '23',
+                    'Entregue' => '3',
+                    'Cancelado' => '4'
+                  }
+  end
+
+  def motoboy
+    @status_code = {'Seu pedido foi criado com sucesso! Aguardamos o pagamento' => '1', 
+                    'Aguardando Pagamento' => '24',
+                    'Solicitação de troca ou devolução' => '29',
+                    'Pago' => '2',
+                    'Sendo fabricado para ser enviado em Porto Alegre' => '31',
+                    'Sendo fabricado para ser enviado em São Paulo' => '30',
+                    'Agendado para entrega pelo motoboy!' => '33',
+                    'Disponível para ser Retirado em Mãos' => '32',
+                    'Enviado' => '23',
+                    'Entregue' => '3',
+                    'Cancelado' => '4'
+                  }
+  end
+
   def filter_index
     @order_status = params['order_status']
     @status_code = {'Seu pedido foi criado com sucesso! Aguardamos o pagamento' => '1', 

@@ -1,0 +1,34 @@
+<h3><%= link_to "PEDIDO criado", index_path %></h3>
+<h3><%= link_to "Pedido produto envio imediato", immediate_delivery_path %></h3>
+<table id="order_table" class="table-striped table-bordered table-responsive">
+  <thead>
+    <tr>
+      <th>Id Pedido</th>
+      <th>Name</th>
+      <th>Data Pedido</th>
+      <th>Status pedido</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th>CEP</th>
+      <th>Rastreamento</th>
+      <th>Mensagem WhatsApp PC</th>
+      <th>Mensagem WhatsApp Celular</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% SimploOrder.all.each do |order| %>
+      <tr>
+        <td><%= order.order_id %></td>
+        <td><%= order.name %></td>
+        <td><%= order.order_date.strftime("%-d/%-m/%Y %H:%M") %></td>
+        <td><%= @status_code.key(order.order_status)%></td>
+        <td><%= order.telephone %></td>
+        <td><%= order.email %></td>
+        <td><%= order.cep %></td>
+        <td><%= order.tracking_object %></td>
+        <td><a href="https://web.whatsapp.com/send?phone=55<%= order.telephone.delete'() ' %>&amp;text=Oi <%= order.name.split(" ").first %>, sou a Lari da Purchase 🥰! Estou com seu pedido em mãos, e vi que o envio solicitado é via motoboy! Deseja receber ainda hoje? 😃 Lembrando que, o pagamento pode ser feito via pix, ou, no momento da entrega do produto (Dinheiro ou cartões débito/crédito). Ficou com alguma dúvida? Fico á disposição. ❤️✨" target="_blank">Clique Aqui para mandar uma mensagem pelo WhatsApp</a></td>        
+        <td><a href="https://api.whatsapp.com/send?phone=55<%= order.telephone.delete'() ' %>&amp;text=Oi <%= order.name.split(" ").first %>, sou a Lari da Purchase 🥰! Estou com seu pedido em mãos, e vi que o envio solicitado é via motoboy! Deseja receber ainda hoje? 😃 Lembrando que, o pagamento pode ser feito via pix, ou, no momento da entrega do produto (Dinheiro ou cartões débito/crédito). Ficou com alguma dúvida? Fico á disposição. ❤️✨" target="_blank">Clique Aqui para mandar uma mensagem pelo WhatsApp</a></td>        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
