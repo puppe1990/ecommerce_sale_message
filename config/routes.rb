@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'orders/discount_message', to: 'orders#discount_message', as: 'discount_message'
   get 'orders/discount_message/:order_status', to: 'orders#filter_discount_message', as: 'filter_discount_message'
   get 'orders/exchanges', to: 'orders#exchanges', as: 'exchanges'
+  post 'orders/update_order_status', to: 'orders#update_order_status', as: 'update_order_status'
 end

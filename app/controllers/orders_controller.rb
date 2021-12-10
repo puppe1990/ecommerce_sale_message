@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class OrdersController < ApplicationController
+
   def index
     @status_code = {'Seu pedido foi criado com sucesso! Aguardamos o pagamento' => '1', 
                     'Aguardando Pagamento' => '24',
@@ -157,5 +158,11 @@ class OrdersController < ApplicationController
                       CC: 130013193 %0a
                       Matheus Nunes Puppe %0a
                       Purchase Store%0a"
+  end
+
+  def update_order_status
+    # byebug
+    SimploOrder.integrate_order_items(params['query'])
+    redirect_to root_path
   end
 end

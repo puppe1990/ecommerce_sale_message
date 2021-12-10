@@ -1,0 +1,5 @@
+<%= form_with url: update_order_status_path, method: :post do |form| %>
+  <%= form.label :date, "Data Atualização:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Atualizar" %>
+<% end %>
