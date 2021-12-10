@@ -161,7 +161,6 @@ class OrdersController < ApplicationController
   end
 
   def update_order_status
-    # byebug
     SimploOrder.integrate_order_items(params['query'])
     redirect_to root_path
   end
