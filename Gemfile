@@ -28,7 +28,7 @@ gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'httparty'
+gem 'httparty', '>= 0.21.0'
 
 
 group :development, :test do
